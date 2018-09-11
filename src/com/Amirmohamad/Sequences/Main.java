@@ -6,6 +6,7 @@ public class Main {
         System.out.println(arithmetic(10, 4, 5));
         System.out.println(geometric(10, 4, 5));
         System.out.println(geometricDecimal(1.0, 0.5));
+        System.out.println(arithmeticOTN(10, 4, 49));
 
     }
 
@@ -20,16 +21,26 @@ public class Main {
 
     }
 
+    private static int arithmeticOTN(int index, int firstNumber, int lastNumber) {
+        //Sn = n/2 [a1 + an]
+        int sum;
+        int p1 = index / 2;
+        int p2 = firstNumber + lastNumber;
+        sum = p2 * p1;
+        return sum;
+
+    }
+
     private static int geometric(int index, int firstNumber, int difference) {
         //Sn = (g1  ( 1 - rn)) / 1-r
         int sum;
-        int p1 = firstNumber * (1 - (int)(Math.pow(difference, index)));
+        int p1 = firstNumber * (1 - (int) (Math.pow(difference, index)));
         int p2 = 1 - difference;
         sum = p1 / p2;
         return sum;
     }
 
-    private static double geometricDecimal(double firstNumber, double difference){
+    private static double geometricDecimal(double firstNumber, double difference) {
         //g1 / 1 - r
         double sum = firstNumber / (1 - difference);
         return sum;
